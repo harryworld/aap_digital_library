@@ -7,7 +7,9 @@
 
 <p>
   <strong>Content:</strong>
-  <%= @article.content %>
+  <div class="editable">
+    <%= @article.content %>
+  </div>
 </p>
 
 <%= link_to 'Edit', edit_article_path(@article) %> |
