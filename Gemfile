@@ -28,6 +28,7 @@ gem 'jbuilder', '~> 2.0'
 # gem 'bcrypt', '~> 3.1.7'
 
 gem 'bootstrap-sass', '~> 3.3.6'
+gem "bower-rails", "~> 0.10.0"
 
 gem 'elasticsearch-rails'
 gem 'elasticsearch-model'
