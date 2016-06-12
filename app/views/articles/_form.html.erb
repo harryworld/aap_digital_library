@@ -17,8 +17,10 @@
   </div>
 
   <div class="field">
-    <%= f.label :content %>
-    <%= f.text_area :content %>
+    <%= f.hidden_field :content, html: {id: "content"} %>
+    <div class="editable" data-field-id="content">
+      <%= @article.content.html_safe %>
+    </div>
   </div>
 
   <div class="actions">

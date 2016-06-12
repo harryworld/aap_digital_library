@@ -11,8 +11,36 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery-ui
 //= require jquery_ujs
-//= require turbolinks
 //= require bootstrap-sprockets
 //= require medium-editor
+//= require handlebars
+//= require jquery.sortable
+//= require blueimp-file-upload/js/vendor/jquery.ui.widget
+//= require blueimp-file-upload/js/jquery.iframe-transport
+//= require blueimp-file-upload
+//= require medium-editor-insert-plugin
 //= require_tree .
+
+$(document).ready(function() {
+
+  var editor = new MediumEditor('.editable');
+  $('.editable').mediumInsert({
+      editor: editor,
+      addons: {
+        images: {
+          fileUploadOptions: {
+            url: '/upload'
+          }
+        }
+      }
+  });
+  $('.edit_article').submit(function(e) {
+    e.preventDefault();
+
+    var contentObj = editor.serialize();
+    $('#article_' + $('.editable').attr('data-field-id')).val(contentObj['element-0'].value);
+    this.submit();
+  });
+});
