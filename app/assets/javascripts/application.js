@@ -23,3 +23,21 @@
 //= require blueimp-file-upload
 //= require medium-editor-insert-plugin
 //= require_tree .
+
+$(document).ready(function() {
+
+  var editor = new MediumEditor('.editable');
+  $('.editable').mediumInsert({
+      editor: editor,
+      addons: {
+        images: {
+          fileUploadOptions: {
+            url: '/upload'
+          }
+        }
+      }
+  });
+  $(".editable").bind("input propertychange", function() {
+    $("#article_" + $(this).attr("data-field-id")).val($(this).html());
+  });
+});

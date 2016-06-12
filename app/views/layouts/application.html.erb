@@ -12,17 +12,4 @@
   <body>
     <%= yield %>
   </body>
-  <script>
-    var editor = new MediumEditor('.editable');
-    $('.editable').mediumInsert({
-        editor: editor,
-        addons: {
-          images: {
-            fileUploadOptions: {
-              url: '/upload'
-            }
-          }
-        }
-    });
-  </script>
 </html>
