@@ -1,6 +1,10 @@
 class ArticlesController < ApplicationController
   before_action :set_article, only: [:show, :edit, :update, :destroy]
 
+  def search
+    @articles = Article.search(params[:s]).records
+  end
+
   # GET /articles
   # GET /articles.json
   def index
