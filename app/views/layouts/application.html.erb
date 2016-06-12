@@ -15,7 +15,14 @@
   <script>
     var editor = new MediumEditor('.editable');
     $('.editable').mediumInsert({
-        editor: editor
+        editor: editor,
+        addons: {
+          images: {
+            fileUploadOptions: {
+              url: '/upload'
+            }
+          }
+        }
     });
   </script>
 </html>
