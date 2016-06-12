@@ -11,8 +11,15 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery-ui
 //= require jquery_ujs
 //= require turbolinks
 //= require bootstrap-sprockets
 //= require medium-editor
+//= require handlebars
+//= require jquery.sortable
+//= require blueimp-file-upload/js/vendor/jquery.ui.widget
+//= require blueimp-file-upload/js/jquery.iframe-transport
+//= require blueimp-file-upload
+//= require medium-editor-insert-plugin
 //= require_tree .
