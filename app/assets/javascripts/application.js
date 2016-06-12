@@ -36,7 +36,11 @@ $(document).ready(function() {
         }
       }
   });
-  $(".editable").bind("input propertychange", function() {
-    $("#article_" + $(this).attr("data-field-id")).val($(this).html());
+  $('.edit_article').submit(function(e) {
+    e.preventDefault();
+
+    var contentObj = editor.serialize();
+    $('#article_' + $('.editable').attr('data-field-id')).val(contentObj['element-0'].value);
+    this.submit();
   });
 });
