@@ -2,7 +2,7 @@ class ArticlesController < ApplicationController
   before_action :set_article, only: [:show, :edit, :update, :destroy]
 
   def search
-    @articles = Article.search(params[:s]).records
+    @articles = Article.search(params[:q]).records
   end
 
   # GET /articles
