@@ -21,3 +21,6 @@
 .byebug_history
 
 vendor/assets/components
+
+# Ignore uploaded testing data
+public/*

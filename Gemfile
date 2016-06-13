@@ -32,6 +32,8 @@ gem 'jquery-sortable-rails', '~> 0.9.11'
 gem 'elasticsearch-rails'
 gem 'elasticsearch-model'
 
+gem 'carrierwave'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

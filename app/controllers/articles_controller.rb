@@ -65,6 +65,19 @@ class ArticlesController < ApplicationController
     end
   end
 
+  def upload
+    image = Image.new
+    image.file = params[:files][0]
+
+    if image.save
+      files = Array.new
+      files[0] = {
+        url: "http://" + request.host_with_port + image.file.url
+      }
+      render json: {files: files}, status: :created
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_article
