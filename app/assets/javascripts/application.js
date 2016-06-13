@@ -25,7 +25,12 @@
 
 $(document).ready(function() {
 
-  var editor = new MediumEditor('.editable');
+  var editor = new MediumEditor('.editable', {
+    buttonLabels: 'fontawesome',
+    toolbar: {
+      buttons: ['bold', 'italic', 'underline', 'anchor', 'h1', 'h2', 'justifyCenter', 'justifyLeft']
+    }
+  });
   $('.editable').mediumInsert({
       editor: editor,
       addons: {
