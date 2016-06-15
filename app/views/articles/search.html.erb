@@ -3,8 +3,9 @@
 <h1>Search Result</h1>
 
 <div>
+  <% HTML_Truncator.self_closing_tags.delete "img" %>
   <% @articles.each do |article| %>
-    <%= link_to HTML_Truncator.truncate(article.content, 12).html_safe, article %>
+    <%= link_to HTML_Truncator.truncate(article.content, 12, :ellipsis => "").html_safe, article %>
     <hr/>
   <% end %>
 </div>
