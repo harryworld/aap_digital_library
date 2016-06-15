@@ -17,8 +17,8 @@
   </div>
 
   <div class="field">
-    <%= f.label :session_id %>
-    <%= f.select :session_id, Session.all.collect { |u| [u.name, u.id] }, selected: @article.session_id %>
+    <%= f.label :category_id %>
+    <%= f.select :category_id, Category.all.collect { |u| [u.name, u.id] }, selected: @article.category_id %>
   </div>
 
   <div class="field">

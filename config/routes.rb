@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :sessions
+  resources :categories
   resources :authors
   resources :issues
   resources :articles

@@ -18,7 +18,7 @@
     <% @articles.each do |article| %>
       <tr>
         <td><%= Issue.find(article.issue_id).number if article.issue_id.present? %></td>
-        <td><%= Session.find(article.session_id).name if article.session_id.present? %></td>
+        <td><%= Category.find(article.category_id).name if article.category_id.present? %></td>
         <td><%= Author.find(article.author_id).name if article.author_id.present? %>
         </td>
         <td><%= article.title %></td>
