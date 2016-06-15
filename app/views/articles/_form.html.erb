@@ -12,6 +12,21 @@
   <% end %>
 
   <div class="field">
+    <%= f.label :issue_id %>
+    <%= f.select :issue_id, Issue.all.collect { |u| [u.name, u.id] }, selected: @article.issue_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :session_id %>
+    <%= f.select :session_id, Session.all.collect { |u| [u.name, u.id] }, selected: @article.session_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :author_id %>
+    <%= f.select :author_id, Author.all.collect { |u| [u.name, u.id] }, selected: @article.author_id, include_blank: "(select if none)" %>
+  </div>
+
+  <div class="field">
     <%= f.label :title %>
     <%= f.text_field :title %>
   </div>

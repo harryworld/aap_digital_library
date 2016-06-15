@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :sessions
+  resources :authors
+  resources :issues
   resources :articles
 
   get 'search/:s', to: 'articles#search'

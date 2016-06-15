@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @issue.name %>
+</p>
+
+<p>
+  <strong>Number:</strong>
+  <%= @issue.number %>
+</p>
+
+<p>
+  <strong>Tagline:</strong>
+  <%= @issue.tagline %>
+</p>
+
+<p>
+  <strong>Cover image:</strong>
+  <%= image_tag(@issue.cover_image, :width => 600) if @issue.cover_image.present? %>
+</p>
+
+<%= link_to 'Edit', edit_issue_path(@issue) %> |
+<%= link_to 'Back', issues_path %>
