@@ -1,0 +1,17 @@
+<% articles = Article.where(issue_id: @issue.id, category_id: category.id) %>
+
+<div class="issue-toc-category">
+  <%= category.name %>
+</div>
+<% articles.each do |article| %>
+  <%= link_to article do %>
+    <div class="issue-toc-article">
+      <%= article.title %>
+    </div>
+    <% if article.author_id.present? %>
+      <div class="issue-toc-author">
+        BY <%= Author.find(article.author_id).name %>
+      </div>
+    <% end %>
+  <% end %>
+<% end %>

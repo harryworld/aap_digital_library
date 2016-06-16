@@ -23,12 +23,13 @@
 
   <div class="field">
     <%= f.label :tagline %>
-    <%= f.text_field :tagline %>
+    <%= f.text_area :tagline %>
   </div>
 
   <div class="field">
     <%= f.label :cover_image %>
     <%= f.file_field :cover_image %>
+    <%= image_tag(@issue.cover_image) if @issue.cover_image.present? %>
   </div>
 
   <div class="actions">

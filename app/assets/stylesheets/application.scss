@@ -20,3 +20,55 @@
 // "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+.container {
+  max-width: 730px;
+}
+
+.footer {
+  width: 100%;
+  display: inline-block;
+  text-align: center;
+  font-weight: bold;
+
+  hr {
+    border-top: 5px solid #000;
+  }
+
+  .sns {
+    padding: 0 20px;
+  }
+}
+
+.scribe {
+  margin: 50px 0;
+  text-align: center;
+  font-weight: bold;
+
+  .underline {
+    padding-bottom: 5px;
+    border-bottom: lightgrey 1px solid;
+  }
+}
+
+.issue-toc-left {
+  transform: rotate(270deg);
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.issue-toc-category {
+  margin-top: 20px;
+  color: #0000FF;
+  text-transform: uppercase;
+}
+
+.issue-toc-article {
+  display: inline-block;
+}
+
+.issue-toc-author {
+  display: inline-block;
+  font-size: 10px;
+  text-transform: uppercase;
+}
