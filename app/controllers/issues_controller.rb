@@ -10,13 +10,6 @@ class IssuesController < ApplicationController
   # GET /issues/1
   # GET /issues/1.json
   def show
-    @articles ||= {}
-    Category.find_each do |category|
-      Article.where(issue_id: @issue.id, category_id: category.id).each do |article|
-        @articles[category.id] ||= Array.new
-        @articles[category.id] << article
-      end
-    end
   end
 
   # GET /issues/new
