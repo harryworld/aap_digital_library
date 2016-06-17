@@ -20,3 +20,137 @@
 // "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+.container {
+  max-width: 730px;
+}
+
+.footer {
+  width: 100%;
+  display: inline-block;
+  margin: 30px 0;
+  text-align: center;
+  font-weight: bold;
+
+  hr {
+    border-top: 5px solid #000;
+  }
+
+  .sns {
+    padding: 0 20px;
+  }
+}
+
+.scribe {
+  margin: 50px 0;
+  text-align: center;
+  font-weight: bold;
+
+  .underline {
+    padding-bottom: 5px;
+    border-bottom: lightgrey 1px solid;
+  }
+}
+
+.last-issue-cover {
+  position: relative;
+  overflow: hidden;
+
+  .last-issue-img {
+    width: 750px;
+    height: 450px;
+    overflow: hidden;
+
+    img {
+      position: absolute;
+      top: -9999px;
+      bottom: -9999px;
+      left: -9999px;
+      right: -9999px;
+      margin: auto;
+      width:100%;
+    }
+  }
+
+  .last-issue-caption {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    text-align: center;
+    padding: 40px;
+
+    .last-issue-tagline {
+      text-decoration: underline;
+      color: black;
+      line-height: 45px;
+    }
+
+    .last-issue-number {
+      margin-top: 30px;
+      text-transform: uppercase;
+      color: #00FFFF;
+
+      h1 {
+        margin-top: 0;
+      }
+    }
+  }
+}
+
+.last-issue-items {
+    height: 300px;
+    padding: 20px 0;
+    background-color: lightgrey;  
+
+  .last-issue-item {
+    height: 200px;
+    border: white 1px solid;
+
+    .last-issue-item-details {
+      img {
+        width: 100%;
+      }
+
+      h2 {
+        font-size: 20px;
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.issue-list {
+  margin-bottom: 20px;
+  text-align: center;  
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #000;
+
+  img {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}
+
+.issue-toc-left {
+  transform: rotate(270deg);
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.issue-toc-category {
+  margin-top: 20px;
+  color: #0000FF;
+  text-transform: uppercase;
+}
+
+.issue-toc-article {
+  display: inline-block;
+}
+
+.issue-toc-author {
+  display: inline-block;
+  font-size: 10px;
+  text-transform: uppercase;
+}

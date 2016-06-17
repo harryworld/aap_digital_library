@@ -10,9 +10,12 @@
   </head>
 
   <body>
-    <form action="/search">
-      <input type="text" name="q">
-    </form>
-    <%= yield %>
+    <div class="container">
+      <form action="/search">
+        <input type="text" name="q">
+      </form>
+      <%= yield %>
+      <%= render partial: "layouts/footer" %>
+    </div>
   </body>
 </html>

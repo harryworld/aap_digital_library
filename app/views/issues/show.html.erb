@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+<%= render partial: "layouts/header" %>
+
+<div class="row">
+  <div class="col-sm-1 issue-toc-left">
+    Issue
+  </div>
+  <div class="col-sm-11">
+    <%= image_tag(@issue.cover_image) if @issue.cover_image.present? %>
+  </div>
+</div>
+
+<%= link_to 'Edit', edit_issue_path(@issue) %> |
+<%= link_to 'Back', issues_path %>
+
+<div class="row">
+  <div class="col-sm-1 issue-toc-left">
+    Table of Content
+  </div>
+  <div class="col-sm-11">
+    <% Category.find_each do |category| %>
+      <% if category.id != 1 %>
+        <%= render partial: "toc_category", locals: { category: category } %>
+      <% end %>
+    <% end %>
+  </div>
+</div>
+
+<%= render partial: "layouts/scribe" %>

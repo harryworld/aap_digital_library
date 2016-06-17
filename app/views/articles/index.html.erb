@@ -5,6 +5,9 @@
 <table>
   <thead>
     <tr>
+      <th>Issue</th>
+      <th>Session</th>
+      <th>Author</th>
       <th>Title</th>
       <th>Content</th>
       <th colspan="3"></th>
@@ -14,8 +17,12 @@
   <tbody>
     <% @articles.each do |article| %>
       <tr>
+        <td><%= Issue.find(article.issue_id).number if article.issue_id.present? %></td>
+        <td><%= Category.find(article.category_id).name if article.category_id.present? %></td>
+        <td><%= Author.find(article.author_id).name if article.author_id.present? %>
+        </td>
         <td><%= article.title %></td>
-        <td><%= article.content %></td>
+        <td><%= truncate strip_tags(article.content), length: 300 %></td>
         <td><%= link_to 'Show', article %></td>
         <td><%= link_to 'Edit', edit_article_path(article) %></td>
         <td><%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %></td>

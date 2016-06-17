@@ -1,0 +1,89 @@
+<p id="notice"><%= notice %></p>
+<%= render partial: "layouts/header" %>
+
+<% last_issue = @issues.last %>
+<div class="row last-issue-cover">
+  <%= link_to last_issue do %>
+    <div class="last-issue-img">
+      <%= image_tag last_issue.cover_image if last_issue.cover_image.present? %>
+    </div>
+    <div class="last-issue-caption">
+      <div class="last-issue-tagline">
+        <h1><%= last_issue.tagline %></h1>
+      </div>
+      <div class="last-issue-number">
+        SEE OUR
+        <h1>Issue <%= last_issue.number %></h1>
+      </div>      
+    </div>
+  <% end %>
+</div>
+<div class="row last-issue-items">
+  <div class="col-sm-3">
+    <%= link_to last_issue do %>
+      <div class="last-issue-item">
+        <div class="last-issue-item-details">
+          <%= image_tag last_issue.cover_image if last_issue.cover_image.present? %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <div class="col-sm-3">
+    <%= link_to last_issue do %>
+      <div class="last-issue-item text-center">
+        <div class="last-issue-item-details">
+          <h2>Contributors</h2>
+          The Editors        
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+<% article = Article.first %>
+<% category = Category.find(article.category_id) %>
+<% author = Author.find(article.author_id) %>
+  <div class="col-sm-3">
+    <%= link_to article do %>
+      <div class="last-issue-item text-center">
+        <div class="last-issue-item-details">
+          <h2><%= category.name %></h2>
+          <b><%= article.title %></b><br>
+          <%= author.name %>
+        </div> 
+      </div>
+    <% end %>
+  </div>
+  <div class="col-sm-3">
+    <%= link_to article do %>
+      <div class="last-issue-item text-center">
+        <div class="last-issue-item-details">
+          <h2><%= category.name %></h2>
+          <b><%= article.title %></b><br>
+          <%= author.name %>
+        </div> 
+      </div>
+    <% end %>
+  </div>
+
+  <div class="text-center">
+    ISSUE <%= last_issue.number %>
+  </div>
+</div>
+
+<%= link_to 'New Issue', new_issue_path %>
+
+<%= render partial: "layouts/scribe" %>
+
+<div class="row">
+  <% @issues.reverse_each do |issue| %>
+    <% unless issue.id == last_issue.id %>
+      <%= link_to issue do %>
+        <div class="col-sm-3 issue-list">
+          <%= image_tag(issue.cover_image) if issue.cover_image.present? %>
+          <br>
+          Issue <%= issue.number %>
+        </div>
+      <% end %>
+    <% end %>
+  <% end %>  
+</div>
