@@ -13,17 +13,17 @@
 
   <div class="field">
     <%= f.label :issue_id %>
-    <%= f.select :issue_id, Issue.all.collect { |u| [u.name, u.id] }, selected: @article.issue_id %>
+    <%= f.collection_select :issue_id, Issue.all, :id, :name, selected: @article.issue_id %>
   </div>
 
   <div class="field">
     <%= f.label :category_id %>
-    <%= f.select :category_id, Category.all.collect { |u| [u.name, u.id] }, selected: @article.category_id %>
+    <%= f.collection_select :category_id, Category.all, :id, :name, selected: @article.category_id %>
   </div>
 
   <div class="field">
     <%= f.label :author_id %>
-    <%= f.select :author_id, Author.all.collect { |u| [u.name, u.id] }, selected: @article.author_id, include_blank: "(select if none)" %>
+    <%= f.collection_select :author_id, Author.all, :id, :name, selected: @article.author_id, include_blank: "(select if none)" %>
   </div>
 
   <div class="field">
@@ -34,7 +34,11 @@
   <div class="field">
     <%= f.hidden_field :content, html: {id: "content"} %>
     <div class="editable" data-field-id="content">
-      <%= @article.content.html_safe %>
+      <% if article.content %>
+        <%= @article.content.html_safe %>
+      <% else %>
+        <%= @article.content %>
+      <% end %>
     </div>
   </div>
 
