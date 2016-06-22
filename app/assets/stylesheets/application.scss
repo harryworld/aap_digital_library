@@ -27,8 +27,19 @@
 }
 
 .header {
+  padding: 20px 0;
+  
   a {
     color: black;
+  }
+
+  .header-search-bar {
+    position: relative;
+
+    input { 
+      border: none;
+      border-bottom: 1px solid lightgrey;
+    }
   }
   
   .header-search-box {

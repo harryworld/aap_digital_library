@@ -1,16 +1,27 @@
+<% showSearchBox = local_assigns[:hideSearchBox].nil? %>
 <div class="header">
   <div class="row">
-    <div class="col-sm-3 text-left"></div>
+    <div class="col-sm-3 text-left">
+      <% unless showSearchBox %>
+        <form action="/search">
+          <div class="header-search-bar">
+            <input type="text" name="q" placeholder="Search">
+          </div>
+        </form>
+      <% end %>
+    </div>
     <div class="col-sm-6 text-center"><a href="/">artasiapacific</a></div>
     <div class="col-sm-3 text-right">log in</div>
   </div>
-  <div class="row">
-    <div class="col-sm-2 text-left"></div>
-    <div class="col-sm-8 text-center">
-      <form action="/search">
-        <input class="header-search-box" type="text" name="q" placeholder="Search">
-      </form>      
+  <% if showSearchBox %>
+    <div class="row">
+      <div class="col-sm-2 text-left"></div>
+      <div class="col-sm-8 text-center">
+        <form action="/search">
+          <input class="header-search-box" type="text" name="q" placeholder="Search">
+        </form>      
+      </div>
+      <div class="col-sm-2 text-right"></div>
     </div>
-    <div class="col-sm-2 text-right"></div>
-  </div>
+  <% end %>
 </div>
