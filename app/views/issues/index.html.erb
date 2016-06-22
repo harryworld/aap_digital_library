@@ -18,55 +18,61 @@
     </div>
   <% end %>
 </div>
+
+<% articles = Article.where(issue_id: last_issue.id) %>
+
 <div class="row last-issue-items">
-  <div class="col-sm-3">
-    <%= link_to last_issue do %>
+  <div class="slick article-slider" data-slick='{"slidesToShow": 4}' data-num-of-articles="<%= articles.length %>">
+    <div class="col-sm-3">
       <div class="last-issue-item">
-        <div class="last-issue-item-details">
-          <%= image_tag last_issue.cover_image if last_issue.cover_image.present? %>
-        </div>
+        <%= link_to last_issue do %>
+          <div class="last-issue-item-details">
+            <%= image_tag last_issue.cover_image if last_issue.cover_image.present? %>
+          </div>
+        <% end %>
       </div>
-    <% end %>
-  </div>
-  <div class="col-sm-3">
-    <%= link_to last_issue do %>
-      <div class="last-issue-item text-center">
-        <div class="last-issue-item-details">
-          <h2>Contributors</h2>
-          The Editors        
+    </div>
+    <div class="col-sm-3">
+      <div class="last-issue-item">
+        <%= link_to last_issue do %>
+          <div class="last-issue-item-details">
+            <div class="last-issue-item-caption">
+              <h2>Contributors</h2>
+              The Editors
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+
+    <% articles.each do |article| %>
+      <% category = Category.find(article.category_id) %>
+      <% author = Author.find(article.author_id) if article.author_id %>
+      <% content = Nokogiri::HTML article.content %>
+      <% img_srcs = content.css('img').map{ |i| i['src'] } %>
+      <div class="col-sm-3">
+        <div class="last-issue-item">
+          <%= link_to article do %>
+            <div class="last-issue-item-details">
+              <%= image_tag img_srcs[0] unless img_srcs.empty? %>
+              <div class="last-issue-item-caption">
+                <h2><%= category.name %></h2>
+                <b><%= article.title %></b><br>
+                <%= author.name if article.author_id %>
+              </div>
+            </div>
+          <% end %>
         </div>
       </div>
     <% end %>
   </div>
 
-<% article = Article.first %>
-<% category = Category.find(article.category_id) %>
-<% author = Author.find(article.author_id) %>
-  <div class="col-sm-3">
-    <%= link_to article do %>
-      <div class="last-issue-item text-center">
-        <div class="last-issue-item-details">
-          <h2><%= category.name %></h2>
-          <b><%= article.title %></b><br>
-          <%= author.name %>
-        </div> 
-      </div>
-    <% end %>
-  </div>
-  <div class="col-sm-3">
-    <%= link_to article do %>
-      <div class="last-issue-item text-center">
-        <div class="last-issue-item-details">
-          <h2><%= category.name %></h2>
-          <b><%= article.title %></b><br>
-          <%= author.name %>
-        </div> 
-      </div>
-    <% end %>
-  </div>
-
-  <div class="text-center">
-    ISSUE <%= last_issue.number %>
+  <div class="article-slider-controls">
+    <span class="article-slider-fast-back glyphicon glyphicon-fast-backward"></span>
+    <span class="article-slider-back glyphicon glyphicon-backward"></span>
+      Issue <%= last_issue.number %>
+    <span class="article-slider-next glyphicon glyphicon-forward"></span>
+    <span class="article-slider-fast-next glyphicon glyphicon-fast-forward"></span>
   </div>
 </div>
 

@@ -17,6 +17,7 @@
   "dependencies": {
     "medium-editor": "^5.20.0",
     "medium-editor-insert-plugin": "^2.3.2",
-    "jquery-ui": "^1.11.4"
+    "jquery-ui": "^1.11.4",
+    "slick-carousel": "^1.6.0"
   }
 }
