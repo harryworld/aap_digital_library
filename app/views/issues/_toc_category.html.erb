@@ -4,14 +4,16 @@
   <%= category.name %>
 </div>
 <% articles.each do |article| %>
-  <%= link_to article do %>
-    <div class="issue-toc-article">
-      <%= article.title %>
-    </div>
-    <% if article.author_id.present? %>
-      <div class="issue-toc-author">
-        BY <%= Author.find(article.author_id).name %>
+  <div>
+    <%= link_to article do %>
+      <div class="issue-toc-article">
+        <%= article.title %>
+        <% if article.author_id.present? %>
+          <div class="issue-toc-author">
+            BY <%= Author.find(article.author_id).name %>
+          </div>
+        <% end %>
       </div>
     <% end %>
-  <% end %>
+  </div>
 <% end %>
