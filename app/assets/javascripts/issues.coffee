@@ -10,6 +10,7 @@ $ ->
   totalSlides = 0
 
   $('.article-slider').slick
+    slidesToShow: slidesToShow
     infinite: false
     arrows: false
 

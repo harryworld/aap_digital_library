@@ -22,7 +22,7 @@
 <% articles = Article.where(issue_id: last_issue.id) %>
 
 <div class="row last-issue-items">
-  <div class="slick article-slider" data-slick='{"slidesToShow": 4}' data-num-of-articles="<%= articles.length %>">
+  <div class="slick article-slider" data-num-of-articles="<%= articles.length %>">
     <div class="col-sm-3">
       <div class="last-issue-item">
         <%= link_to last_issue do %>
