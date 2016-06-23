@@ -1,13 +1,17 @@
-<p id="notice"><%= notice %></p>
-<%= render partial: "layouts/header" %>
+<% if notice %>
+  <p id="notice"><%= notice %></p>
+<% end %>
 
 <% last_issue = @issues.last %>
 <div class="row last-issue-cover">
-  <%= link_to last_issue do %>
-    <div class="last-issue-img">
-      <%= image_tag last_issue.cover_image if last_issue.cover_image.present? %>
-    </div>
-    <div class="last-issue-caption">
+  <div class="last-issue-img">
+    <%= image_tag last_issue.cover_image if last_issue.cover_image.present? %>
+  </div>
+  <div class="index-header">
+    <%= render partial: "layouts/header" %>  
+  </div>
+  <div class="last-issue-caption">
+    <%= link_to last_issue do %>
       <div class="last-issue-tagline">
         <h1><%= last_issue.tagline %></h1>
       </div>
@@ -15,8 +19,8 @@
         SEE OUR
         <h1>Issue <%= last_issue.number %></h1>
       </div>      
-    </div>
-  <% end %>
+    <% end %>
+  </div>
 </div>
 
 <% articles = Article.where(issue_id: last_issue.id) %>

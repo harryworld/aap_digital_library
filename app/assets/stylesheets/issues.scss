@@ -22,6 +22,17 @@
     }
   }
 
+  .index-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    .header-right {
+      padding-right: 30px;
+    }
+  }
+
   .last-issue-caption {
     position: absolute;
     left: 0;
