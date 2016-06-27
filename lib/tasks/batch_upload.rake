@@ -15,7 +15,8 @@ namespace :articles do
         content = ""
 
         fin = File.open(file).read
-        fin.force_encoding("ISO-8859-1").encode("UTF-8").gsub!(/\r\n?/, "\n")
+        fin.force_encoding("ISO-8859-1").encode("UTF-8")
+        fin.gsub!(/\r\n?/, "\n")
         fin.gsub!(/\n\n?/, "\n")
         fin.each_line do |line|
           line.gsub!(/\n?/, "")
