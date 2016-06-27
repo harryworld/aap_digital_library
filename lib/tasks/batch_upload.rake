@@ -15,13 +15,16 @@ namespace :articles do
         content = ""
 
         fin = File.open(file).read
+        fin.force_encoding("ISO-8859-1").encode("UTF-8").gsub!(/\r\n?/, "\n")
+        fin.gsub!(/\n\n?/, "\n")
         fin.each_line do |line|
+          line.gsub!(/\n?/, "")
           title = line if title.blank?
           content += "<p>#{line}</p>\n"
         end
 
-        article.title = title.force_encoding("ISO-8859-1").encode("UTF-8")
-        article.content = content.force_encoding("ISO-8859-1").encode("UTF-8")
+        article.title = title
+        article.content = content
         if article.save
           puts "#{count += 1} articles are loaded."
         else
