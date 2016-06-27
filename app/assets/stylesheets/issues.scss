@@ -118,6 +118,17 @@
   white-space: nowrap;
 }
 
+.issue-number {
+  top: 80px;
+  color: blue;
+  font-size: 24px;
+  font-weight: bold;
+
+  a {
+    color: lightgrey;
+  }
+}
+
 .issue-toc-category {
   margin-top: 20px;
   color: #0000FF;

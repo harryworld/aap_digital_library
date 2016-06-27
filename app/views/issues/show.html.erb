@@ -1,29 +1,41 @@
-<p id="notice"><%= notice %></p>
+<% if notice %>
+  <p id="notice"><%= notice %></p>
+<% end %>
 <%= render partial: "layouts/header" %>
+<% previous_issue = @issue.id == Issue.first.id ? Issue.last : Issue.find(@issue.id - 1) %>
+<% next_issue = @issue.id == Issue.last.id ? Issue.first : Issue.find(@issue.id + 1) %>
 
 <div class="row">
   <div class="col-sm-1 issue-toc-left">
     Issue
   </div>
-  <div class="col-sm-11">
+  <div class="col-sm-1 issue-number"><%= link_to previous_issue.number, previous_issue %></div>
+  <div class="col-sm-1 issue-number"><%= @issue.number %></div>
+  <div class="col-sm-7">
     <%= image_tag(@issue.cover_image) if @issue.cover_image.present? %>
+    <br>
+    <%= link_to 'Edit', edit_issue_path(@issue) %> |
+    <%= link_to 'Back', issues_path %>
   </div>
+  <div class="col-sm-1 issue-number"><%= link_to next_issue.number, next_issue %></div>
+  <div class="col-sm-1"></div>
 </div>
-
-<%= link_to 'Edit', edit_issue_path(@issue) %> |
-<%= link_to 'Back', issues_path %>
 
 <div class="row">
   <div class="col-sm-1 issue-toc-left">
     Table of Content
   </div>
-  <div class="col-sm-11">
+  <div class="col-sm-1"></div>
+  <div class="col-sm-1"></div>
+  <div class="col-sm-7">
     <% Category.find_each do |category| %>
       <% if category.id != 1 %>
         <%= render partial: "toc_category", locals: { category: category } %>
       <% end %>
     <% end %>
   </div>
+  <div class="col-sm-1"></div>
+  <div class="col-sm-1"></div>
 </div>
 
 <%= render partial: "layouts/scribe" %>
