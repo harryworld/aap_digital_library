@@ -53,6 +53,7 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
 
   gem 'mina'
+  gem 'mina-bower', :github => 'apsure/mina-bower'
 end
 
 group :production do
