@@ -53,6 +53,8 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
 
   gem 'mina'
+  gem 'mina-puma', :require => false
+  gem 'mina-logs', require: false
 end
 
 group :production do
