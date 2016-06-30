@@ -4,7 +4,7 @@ class IssuesController < ApplicationController
   # GET /issues
   # GET /issues.json
   def index
-    @issues = Issue.all
+    @issues = Issue.all.order(:id)
   end
 
   # GET /issues/1
