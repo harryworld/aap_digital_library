@@ -104,6 +104,7 @@ end
 
 task :restart do
   queue 'sudo service restart nginx'
+  invoke :'puma:phased_restart'
 end
 # For help in making your deploy script, see the Mina documentation:
 #
