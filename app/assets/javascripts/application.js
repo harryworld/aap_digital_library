@@ -22,6 +22,7 @@
 //= require blueimp-file-upload
 //= require medium-editor-insert-plugin
 //= require slick-carousel
+//= require select2
 //= require_tree .
 
 $(document).ready(function() {
