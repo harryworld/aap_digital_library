@@ -43,6 +43,13 @@ $(document).ready(function() {
         }
       }
   });
+  $('.new_article').submit(function(e) {
+    e.preventDefault();
+
+    var contentObj = editor.serialize();
+    $('#article_' + $('.editable').attr('data-field-id')).val(contentObj['element-0'].value);
+    this.submit();
+  });
   $('.edit_article').submit(function(e) {
     e.preventDefault();
 
