@@ -1,3 +1,7 @@
-# Place all the behaviors and hooks related to the matching controller here.
-# All this logic will automatically be available in application.js.
-# You can use CoffeeScript in this file: http://coffeescript.org/
+$ ->
+  $('select').select2
+    theme: 'classic'
+  $('#article_author_id').select2
+    tags: true,
+    placeholder: "No author",
+    allowClear: true

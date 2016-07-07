@@ -22,6 +22,7 @@
 //= require blueimp-file-upload
 //= require medium-editor-insert-plugin
 //= require slick-carousel
+//= require select2
 //= require_tree .
 
 $(document).ready(function() {
@@ -41,6 +42,13 @@ $(document).ready(function() {
           }
         }
       }
+  });
+  $('.new_article').submit(function(e) {
+    e.preventDefault();
+
+    var contentObj = editor.serialize();
+    $('#article_' + $('.editable').attr('data-field-id')).val(contentObj['element-0'].value);
+    this.submit();
   });
   $('.edit_article').submit(function(e) {
     e.preventDefault();

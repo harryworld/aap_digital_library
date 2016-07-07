@@ -23,7 +23,7 @@
 
   <div class="field">
     <%= f.label :author_id %>
-    <%= f.collection_select :author_id, Author.all, :id, :name, selected: @article.author_id, include_blank: "(select if none)" %>
+    <%= f.collection_select :author_id, Author.all, :id, :name, selected: @article.author_id %>
   </div>
 
   <div class="field">

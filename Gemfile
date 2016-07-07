@@ -30,6 +30,7 @@ gem 'jquery-sortable-rails', '~> 0.9.11'
 gem 'elasticsearch-rails'
 gem 'elasticsearch-model'
 gem 'html_truncator', '~> 0.2'
+gem 'select2-rails'
 
 gem 'carrierwave'
 
