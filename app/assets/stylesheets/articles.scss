@@ -29,7 +29,6 @@ select {
     color: black;
   }
 
-  i, u,
   a:hover {
     text-decoration: none;
   }
@@ -39,27 +38,10 @@ select {
   }
 
   p, h1 {
-    text-align: left !important;
     margin: 0;
-  }
-
-  p {
-    margin: 0;
-
-    b {
-      font-weight: normal;
-    }
-
-    i {
-      font-style: normal; 
-    }
   }
 
   .search-result-category {
     font-size: 20px;
-  }
-
-  .medium-insert-images {
-    display: none;
   }
 }

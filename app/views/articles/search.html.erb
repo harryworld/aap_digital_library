@@ -5,13 +5,14 @@
   <% HTML_Truncator.self_closing_tags.delete "img" %>
   <% @articles.each do |article| %>
     <% category = Category.find(article.category_id) %>
+    <% content = sanitize article.content, tags: %w(h1) %>
 
     <div class="search-result">
       <%= link_to article do %>
         <div class="search-result-category">
           <%= category.name %>        
         </div>
-        <%= HTML_Truncator.truncate(article.content, 30, :ellipsis => "").html_safe %>
+        <%= content.truncate(300).html_safe %>
       <% end %>
     </div>
   <% end %>
