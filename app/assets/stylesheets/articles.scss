@@ -23,11 +23,18 @@ select {
 /////////////////////////////////
 
 .search-result {
+  margin-bottom: 40px;
+
   a {
     color: black;
   }
 
-  .search-result-category {
-    font-size: 20px;
+  p {
+    margin: 0;
+  }
+
+  .search-result-title {
+    font-size: 24px;
+    font-weight: bold;
   }
 }

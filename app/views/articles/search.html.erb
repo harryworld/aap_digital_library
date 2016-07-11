@@ -4,15 +4,14 @@
 <div>
   <% HTML_Truncator.self_closing_tags.delete "img" %>
   <% @articles.each do |article| %>
+    <% issue = Issue.find(article.issue_id) %>
     <% category = Category.find(article.category_id) %>
+    <% content = sanitize article.content, tags: %w(h1) %>
+    <% content = content.sub "<h1>", "<div><span class='search-result-title'><a href='/articles/#{article.id}'>"  %>
+    <% content = content.sub "</h1>", "</a></span> <span>Issue #{issue.number}</span></div>"  %>
 
     <div class="search-result">
-      <%= link_to article do %>
-        <div class="search-result-category">
-          <%= category.name %>        
-        </div>
-        <%= HTML_Truncator.truncate(article.content, 30, :ellipsis => "").html_safe %>
-      <% end %>
+      <%= content.truncate(300).html_safe %>
     </div>
   <% end %>
 </div>
