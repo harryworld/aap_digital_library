@@ -4,4 +4,9 @@ namespace :resize do
       issue.cover_image.recreate_versions!
     end
   end
+  task :article_image => :environment do
+    Image.find_each do |image|
+      image.file.recreate_versions!
+    end
+  end
 end
