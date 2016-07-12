@@ -10,9 +10,9 @@
     Issue
   </div>
   <div class="col-sm-1 issue-number"><%= link_to previous_issue.number, previous_issue %></div>
-  <div class="col-sm-1 issue-number"><%= @issue.number %></div>
-  <div class="col-sm-7">
-    <%= image_tag(@issue.cover_image) if @issue.cover_image.present? %>
+  <div class="col-sm-2 issue-number text-center"><%= @issue.number %></div>
+  <div class="col-sm-6">
+    <%= image_tag(@issue.cover_image.thumb) if @issue.cover_image.present? %>
     <br>
     <%= link_to 'Edit', edit_issue_path(@issue) %> |
     <%= link_to 'Back', issues_path %>
@@ -26,8 +26,8 @@
     Table of Content
   </div>
   <div class="col-sm-1"></div>
-  <div class="col-sm-1"></div>
-  <div class="col-sm-7">
+  <div class="col-sm-2"></div>
+  <div class="col-sm-6">
     <% Category.find_each do |category| %>
       <%= render partial: "toc_category", locals: { category: category } %>
     <% end %>

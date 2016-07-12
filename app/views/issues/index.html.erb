@@ -31,7 +31,7 @@
       <div class="last-issue-item">
         <%= link_to last_issue do %>
           <div class="last-issue-item-details">
-            <%= image_tag last_issue.cover_image if last_issue.cover_image.present? %>
+            <%= image_tag last_issue.cover_image.thumb if last_issue.cover_image.present? %>
           </div>
         <% end %>
       </div>
