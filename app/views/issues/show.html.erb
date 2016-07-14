@@ -14,8 +14,7 @@
   <div class="col-sm-6">
     <%= image_tag(@issue.cover_image.thumb) if @issue.cover_image.present? %>
     <br>
-    <%= link_to 'Edit', edit_issue_path(@issue) %> |
-    <%= link_to 'Back', issues_path %>
+    <%= link_to 'Edit', edit_issue_path(@issue) %>
   </div>
   <div class="col-sm-1 issue-number"><%= link_to next_issue.number, next_issue %></div>
   <div class="col-sm-1"></div>

@@ -2,5 +2,6 @@
 
 <%= render 'form', article: @article %>
 
+<% issue = Issue.find(@article.issue_id) %>
 <%= link_to 'Show', @article %> |
-<%= link_to 'Back', articles_path %>
+<%= link_to 'Back', issue %>
