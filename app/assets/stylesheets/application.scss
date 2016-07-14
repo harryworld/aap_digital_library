@@ -26,14 +26,14 @@
 
 @font-face {
   font-family: "IdealSans";
-  src: url("IdealSans-Book.otf");
+  src: font_url("IdealSans-Book.otf") format('opentype');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: "IdealSans";
-  src: url("IdealSans-Bold.otf");
+  src: font_url("IdealSans-Bold.otf") format('opentype');
   font-weight: bold;
   font-style: normal;
 }
