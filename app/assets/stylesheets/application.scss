@@ -24,6 +24,24 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+@font-face {
+  font-family: "IdealSans";
+  src: url("IdealSans-Book.otf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "IdealSans";
+  src: url("IdealSans-Bold.otf");
+  font-weight: bold;
+  font-style: normal;
+}
+
+body {
+  font-family: "IdealSans";  
+}
+
 .container {
   max-width: 730px;
 }
