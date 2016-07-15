@@ -30,7 +30,20 @@ $(document).ready(function() {
   var editor = new MediumEditor('.editable', {
     buttonLabels: 'fontawesome',
     toolbar: {
-      buttons: ['bold', 'italic', 'underline', 'superscript', 'subscript', 'anchor', 'h1', 'h2', 'justifyLeft', 'justifyCenter', 'indent']
+      buttons: [
+        'bold', 
+        'italic', 
+        'underline', 
+        'superscript', 
+        'subscript', 
+        'anchor', 
+        'h1', 
+        'h2', 
+        'h3', 
+        'h4', 
+        'justifyLeft', 
+        'justifyCenter', 
+        'quote'      ]
     }
   });
   $('.editable').mediumInsert({
