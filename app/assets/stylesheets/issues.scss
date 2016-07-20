@@ -61,7 +61,7 @@
 
 .last-issue-items {
     padding: 20px 0;
-    background-color: lightgrey;  
+    background-color: lightgrey;
 
   .last-issue-item {
     height: 200px;
@@ -82,7 +82,7 @@
         color: black;
 
         h2 {
-          font-size: 20px;
+          font-size: 20pt;
           text-decoration: underline;
         }
       }
@@ -101,7 +101,7 @@
 
 .issue-list {
   margin-bottom: 20px;
-  text-align: center;  
+  text-align: center;
   text-transform: uppercase;
   font-weight: bold;
   color: #000;
@@ -121,7 +121,7 @@
 .issue-number {
   top: 130px;
   color: blue;
-  font-size: 24px;
+  font-size: 24pt;
   font-weight: bold;
 
   a {
@@ -142,6 +142,6 @@
 
 .issue-toc-author {
   display: inline-block;
-  font-size: 10px;
+  font-size: 10pt;
   text-transform: uppercase;
 }

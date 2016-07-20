@@ -40,7 +40,7 @@
 
 body {
   font-family: "IdealSans";
-  font-size: 12px;
+  font-size: 12pt;
 }
 
 .container {
@@ -49,7 +49,7 @@ body {
 
 .header {
   padding: 20px 0;
-  
+
   a {
     color: black;
   }
@@ -57,18 +57,18 @@ body {
   .header-search-bar {
     position: relative;
 
-    input { 
+    input {
       border: none;
       border-bottom: 1px solid lightgrey;
     }
   }
-  
+
   .header-search-box {
     width: 100%;
     margin: 20px;
     padding: 0 20px;
     border: 3px solid #00ffff;
-    font-size: 24px;
+    font-size: 24pt;
   }
 }
 
