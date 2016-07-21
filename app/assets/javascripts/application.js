@@ -51,7 +51,10 @@ $(document).ready(function() {
       addons: {
         images: {
           fileUploadOptions: {
-            url: '/upload'
+            url: '/upload',
+            formData: {
+              article_id: $('#article_id')[0].value
+            }
           }
         }
       }

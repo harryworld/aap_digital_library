@@ -68,6 +68,7 @@ class ArticlesController < ApplicationController
   def upload
     image = Image.new
     image.file = params[:files][0]
+    image.article_id = params[:article_id].to_i if is_i? params[:article_id]
 
     if image.save
       files = Array.new
@@ -94,5 +95,9 @@ class ArticlesController < ApplicationController
       end
 
       return p
+    end
+
+    def is_i? my_str
+      true if Integer(my_str) rescue false
     end
 end

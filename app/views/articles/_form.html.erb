@@ -12,6 +12,10 @@
   <% end %>
 
   <div class="field">
+    <%= f.hidden_field :id %>
+  </div>
+
+  <div class="field">
     <%= f.label :issue_id %>
     <%= f.collection_select :issue_id, Issue.all, :id, :name, selected: @article.issue_id %>
   </div>

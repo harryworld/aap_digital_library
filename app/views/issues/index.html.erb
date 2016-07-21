@@ -52,13 +52,18 @@
     <% articles.each do |article| %>
       <% category = Category.find(article.category_id) %>
       <% author = Author.find(article.author_id) if article.author_id %>
-      <% content = Nokogiri::HTML article.content %>
-      <% img_srcs = content.css('img').map{ |i| i['src'] } %>
+      <% img = Image.where(article_id: article.id)[0] %>
+      <% img_src = img.file.thumb.url if img %>
+      <% unless img_src %>
+        <% content = Nokogiri::HTML article.content %>
+        <% img_srcs = content.css('img').map{ |i| i['src'] } %>
+        <% img_src = img_srcs[0] unless img_srcs.empty? %>
+      <% end %>
       <div class="col-sm-3">
         <div class="last-issue-item">
           <%= link_to article do %>
             <div class="last-issue-item-details">
-              <%= image_tag img_srcs[0] unless img_srcs.empty? %>
+              <%= image_tag img_src if img_src %>
               <div class="last-issue-item-caption">
                 <h2><%= category.name %></h2>
                 <b><%= article.title %></b><br>
