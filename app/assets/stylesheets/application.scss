@@ -79,6 +79,12 @@ body {
   text-align: center;
   font-weight: bold;
 
+  a,
+  a:hover {
+    color: black;
+    text-decoration: none;
+  }
+
   hr {
     border-top: 5px solid #000;
   }
