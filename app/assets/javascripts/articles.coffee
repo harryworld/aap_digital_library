@@ -5,3 +5,9 @@ $ ->
     tags: true,
     placeholder: "No author",
     allowClear: true
+
+  $('.search-result').hover ->
+    $(this).children('div').children('.search-result-title').toggleClass('active')
+  $('.search-result').on 'click', ->
+    linkTo = '/articles/' + $(this).data('articleId')
+    window.location.href = linkTo

@@ -85,4 +85,8 @@ select {
     font-size: 30pt;
     font-weight: bold;
   }
+
+  .search-result-title.active {
+    text-decoration: underline;
+  }
 }
