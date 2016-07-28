@@ -36,6 +36,11 @@
   </div>
 
   <div class="field">
+    <%= f.label :title_color_id %>
+    <%= f.collection_select :title_color_id, TitleColor.all, :id, :name, selected: @article.title_color_id %>
+  </div>
+
+  <div class="field">
     <%= f.hidden_field :content, html: {id: "content"} %>
     <div class="editable" data-field-id="content">
       <% if article.content %>

@@ -37,7 +37,7 @@
     <div class="col-sm-3">
       <%= link_to last_issue do %>
         <div class="last-issue-item">
-          <div class="last-issue-item-caption">
+          <div class="last-issue-item-caption black">
             <h2>Contributors</h2>
             The Editors
           </div>
@@ -62,13 +62,14 @@
           <% else %>
             <div class="last-issue-item">
           <% end %>
-              <div class="last-issue-item-caption">
-                <% if category %>
-                  <h2><%= category.name %></h2>
-                <% end %>
-                <b><%= article.title %></b><br>
-                <%= author.name if article.author_id %>
-              </div>
+            <% caption_color = TitleColor.find(article.title_color_id) %>            
+            <div class="last-issue-item-caption <%= caption_color.name %>">
+              <% if category %>
+                <h2><%= category.name %></h2>
+              <% end %>
+              <b><%= article.title %></b><br>
+              <%= author.name if article.author_id %>
+            </div>
           </div>
         <% end %>
       </div>

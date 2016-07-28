@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :title_colors
   resources :categories
   resources :authors
   resources :issues

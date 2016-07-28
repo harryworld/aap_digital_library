@@ -1,0 +1,2 @@
+class TitleColor < ApplicationRecord
+end

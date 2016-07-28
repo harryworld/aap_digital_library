@@ -30,3 +30,8 @@ Category.create([
   { id: 6, name: "Reviews" },
   { id: 7, name: "The Sketch" }
 ])
+
+TitleColor.create([
+  { id: 1, name: "Black", hex: "#000000"},
+  { id: 2, name: "White", hex: "#FFFFFF"}  
+])

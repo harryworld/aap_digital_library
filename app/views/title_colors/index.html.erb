@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Title Colors</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Hex</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @title_colors.each do |title_color| %>
+      <tr>
+        <td><%= title_color.name %></td>
+        <td><%= title_color.hex %></td>
+        <td><%= link_to 'Show', title_color %></td>
+        <td><%= link_to 'Edit', edit_title_color_path(title_color) %></td>
+        <td><%= link_to 'Destroy', title_color, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Title Color', new_title_color_path %>

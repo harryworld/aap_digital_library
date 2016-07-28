@@ -1,0 +1,27 @@
+<%= form_for(title_color) do |f| %>
+  <% if title_color.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(title_color.errors.count, "error") %> prohibited this title_color from being saved:</h2>
+
+      <ul>
+      <% title_color.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :hex %>
+    <%= f.text_field :hex %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

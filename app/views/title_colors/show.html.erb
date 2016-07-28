@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @title_color.name %>
+</p>
+
+<p>
+  <strong>Hex:</strong>
+  <%= @title_color.hex %>
+</p>
+
+<%= link_to 'Edit', edit_title_color_path(@title_color) %> |
+<%= link_to 'Back', title_colors_path %>
