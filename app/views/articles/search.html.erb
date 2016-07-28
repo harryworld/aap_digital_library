@@ -8,7 +8,7 @@
     <% category = Category.find(article.category_id) if article.category_id %>
     <% content = sanitize article.content, tags: %w(h1) %>
     <% content = content.sub "<h1>", "<div><span class='search-result-title'><a href='/articles/#{article.id}'>"  %>
-    <% content = content.sub "</h1>", "</a></span> <span>Issue #{issue.number}</span></div>"  %>
+    <% content = content.sub "</h1>", "</a></span> <span>#{issue.name}</span></div>"  %>
 
     <div class="search-result">
       <%= content.truncate(300).html_safe %>
