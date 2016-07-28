@@ -1,4 +1,4 @@
-<% articles = Article.where(issue_id: @issue.id, category_id: category.id) %>
+<% articles = Article.where(issue_id: @issue.id, category_id: category.id).order(:id) %>
 
 <% if articles.any? %>
   <div class="issue-toc-category">
