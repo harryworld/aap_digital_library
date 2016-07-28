@@ -1,8 +1,16 @@
-<% articles = Article.where(issue_id: @issue.id, category_id: category.id).order(:id) %>
+<% if category %>
+  <% articles = Article.where(issue_id: @issue.id, category_id: category.id).order(:id) %>
+<% else %>
+  <% articles = Article.where(issue_id: @issue.id, category_id: nil).order(:id) %>
+<% end %>
 
 <% if articles.any? %>
   <div class="issue-toc-category">
-    <%= category.name %>
+    <% if category %>
+      <%= category.name %>
+    <% else %>
+      <%=  %>
+    <% end %>
   </div>
   <% articles.each do |article| %>
     <div>

@@ -50,7 +50,7 @@
     </div>
 
     <% articles.each do |article| %>
-      <% category = Category.find(article.category_id) %>
+      <% category = Category.find(article.category_id) if article.category_id %>
       <% author = Author.find(article.author_id) if article.author_id %>
       <% img = Image.where(article_id: article.id)[0] %>
       <% img_src = img.file.thumb.url if img %>
@@ -65,7 +65,9 @@
             <div class="last-issue-item-details">
               <%= image_tag img_src if img_src %>
               <div class="last-issue-item-caption">
-                <h2><%= category.name %></h2>
+                <% if category %>
+                  <h2><%= category.name %></h2>
+                <% end %>
                 <b><%= article.title %></b><br>
                 <%= author.name if article.author_id %>
               </div>

@@ -22,7 +22,7 @@
 
   <div class="field">
     <%= f.label :category_id %>
-    <%= f.collection_select :category_id, Category.all, :id, :name, selected: @article.category_id %>
+    <%= f.collection_select :category_id, Category.all, :id, :name, selected: @article.category_id, include_blank: "(select if none)" %>
   </div>
 
   <div class="field">
