@@ -64,27 +64,21 @@
     background-color: lightgrey;
 
   .last-issue-item {
+    display: table;
+    table-layout: fixed;
     height: 200px;
+    width: 100%;
     border: white 1px solid;
 
-    .last-issue-item-details {
-      img {
-        width: 100%;
-      }
+    .last-issue-item-caption {
+      display: table-cell;
+      vertical-align: middle;
+      text-align: center;
+      color: black;
 
-      .last-issue-item-caption {
-        position: absolute;
-        left: 0;
-        right: 0;
-        top: 0;
-        padding: 15px;
-        text-align: center;
-        color: black;
-
-        h2 {
-          font-size: 20pt;
-          text-decoration: underline;
-        }
+      h2 {
+        font-size: 20pt;
+        text-decoration: underline;
       }
     }
   }

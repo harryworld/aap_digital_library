@@ -39,3 +39,7 @@ $ ->
     slideToGo = slideToGo + slidesToShow
     slideToGo = totalSlides - slidesToShow if slideToGo > totalSlides - slidesToShow
     $('.article-slider').slick 'slickGoTo', slideToGo
+
+  $('.last-issue-item').each ->
+    imgSrc = $(this).data('backgroundImg')
+    $(this).css('background-image', 'url(' + imgSrc + ')') if imgSrc

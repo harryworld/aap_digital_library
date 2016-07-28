@@ -27,26 +27,22 @@
 
 <div class="row last-issue-items">
   <div class="slick article-slider" data-num-of-articles="<%= articles.length %>">
-    <div class="col-sm-3">
-      <div class="last-issue-item">
+    <% if last_issue.cover_image.present? %>    
+      <div class="col-sm-3">
         <%= link_to last_issue do %>
-          <div class="last-issue-item-details">
-            <%= image_tag last_issue.cover_image.thumb if last_issue.cover_image.present? %>
-          </div>
+          <div class="last-issue-item" data-background-img="<%= last_issue.cover_image.thumb.url %>"></div>
         <% end %>
       </div>
-    </div>
+    <% end %>
     <div class="col-sm-3">
-      <div class="last-issue-item">
-        <%= link_to last_issue do %>
-          <div class="last-issue-item-details">
-            <div class="last-issue-item-caption">
-              <h2>Contributors</h2>
-              The Editors
-            </div>
+      <%= link_to last_issue do %>
+        <div class="last-issue-item">
+          <div class="last-issue-item-caption">
+            <h2>Contributors</h2>
+            The Editors
           </div>
-        <% end %>
-      </div>
+        </div>
+      <% end %>
     </div>
 
     <% articles.each do |article| %>
@@ -60,10 +56,12 @@
         <% img_src = img_srcs[0] unless img_srcs.empty? %>
       <% end %>
       <div class="col-sm-3">
-        <div class="last-issue-item">
-          <%= link_to article do %>
-            <div class="last-issue-item-details">
-              <%= image_tag img_src if img_src %>
+        <%= link_to article do %>
+          <% if img_src %>
+            <div class="last-issue-item" data-background-img="<%= img_src %>">
+          <% else %>
+            <div class="last-issue-item">
+          <% end %>
               <div class="last-issue-item-caption">
                 <% if category %>
                   <h2><%= category.name %></h2>
@@ -71,9 +69,8 @@
                 <b><%= article.title %></b><br>
                 <%= author.name if article.author_id %>
               </div>
-            </div>
-          <% end %>
-        </div>
+          </div>
+        <% end %>
       </div>
     <% end %>
   </div>
