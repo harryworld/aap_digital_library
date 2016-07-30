@@ -87,7 +87,12 @@ class ArticlesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def article_params
-      p = params.require(:article).permit(:title, :content, :issue_id, :category_id, :author_id, :title_color_id)
+      p = params.require(:article).permit(:title, :content, :issue_id, :category_id, :country_id, :author_id, :title_color_id)
+
+      unless Country.exists?(id: p["country_id"])
+        country = Country.create(name: p["country_id"])
+        p["country_id"] = country.id
+      end
 
       unless Author.exists?(id: p["author_id"])
         author = Author.create(name: p["author_id"])

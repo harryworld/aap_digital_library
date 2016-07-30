@@ -16,7 +16,11 @@
     <div>
       <%= link_to article do %>
         <div class="issue-toc-article">
-          <%= article.title %>
+          <% if article.country_id %>
+            <% country = Country.find(article.country_id) %>
+            <%= country.name %>:
+          <% end %>
+            <%= article.title %>
           <% if article.author_id.present? %>
             <div class="issue-toc-author">
               BY <%= Author.find(article.author_id).name %>
